@@ -13,7 +13,7 @@ const ShowRecipes = ({ recipe }) => {
                     <img src={imageURL} alt="" style={{ height: '300px', width: '350px' }} />
                 </div>
                 <div>
-                   <h1>Recipe Name: {recipeName}</h1>
+                   <h2>Recipe Name: {recipeName}</h2>
                    <h3>Recipe Id: {recipeId}</h3>
                    <p>Ingredients: {ingredients}</p>
                    <p>Instructions: {instructions}</p>

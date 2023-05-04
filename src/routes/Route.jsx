@@ -5,6 +5,7 @@ import {
 import Main from "../components/layouts/Main";
 import Chefs from "../components/Chefs/Chefs";
 import LoadRecipes from "../components/LoadRecipes/LoadRecipes";
+import Login from "../components/Login/Login";
 
 
   const router = createBrowserRouter([
@@ -15,6 +16,10 @@ import LoadRecipes from "../components/LoadRecipes/LoadRecipes";
         {
           path:"/",
           element:<Chefs></Chefs>,          
+        },
+        {
+          path:"/login",
+          element:<Login></Login>,          
         },
         {
           path:"/chefs/:id",
