@@ -8,12 +8,14 @@ import LoadRecipes from "../components/LoadRecipes/LoadRecipes";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 
   const router = createBrowserRouter([
     {
       path: "/",
       element:<Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
     children: [
         {
           path:"/",
