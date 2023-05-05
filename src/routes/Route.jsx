@@ -9,6 +9,7 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import Blogs from "../components/Blogs/Blogs";
 
 
   const router = createBrowserRouter([
@@ -20,6 +21,10 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
         {
           path:"/",
           element:<Chefs></Chefs>,          
+        },
+        {
+          path:"/blogs",
+          element:<Blogs></Blogs>,          
         },
         {
           path:"/login",
