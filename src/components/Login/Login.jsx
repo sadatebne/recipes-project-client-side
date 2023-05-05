@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 
 
@@ -10,6 +12,8 @@ import { Link } from 'react-router-dom';
 const Login = () => {
     const [err, setErr] = useState('')
     const [success, setSuccess] = useState('')
+
+    const {logIn}=useContext(AuthContext)
 
     const handleSign = (event) => {
         event.preventDefault()
@@ -19,6 +23,18 @@ const Login = () => {
         const password = form.password.value
 
         console.log(email, password)
+        
+        setErr('')
+
+        logIn(email , password)
+        .then(result=>{
+            setSuccess("Successfully Login")
+            toast("Successfully Login");
+        })
+        .catch(error=>{
+            console.log(error)
+            setErr(error.message)
+        })
     }
     return (
         <div>
@@ -41,7 +57,7 @@ const Login = () => {
                     </Form.Text>
 
                     <Form.Text className="text-success">
-                        {success}
+                        
                     </Form.Text>
 
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">

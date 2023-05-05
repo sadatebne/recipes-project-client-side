@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
+
+    const {signUp}=useContext(AuthContext)
 
     const formHandle=(event)=>{
         
@@ -17,6 +20,17 @@ const Register = () => {
         const photo=form.photo.value
 
         console.log(user, email, password)
+
+        signUp(email, password)
+        .then(result=>{
+            console.log(result.user)
+            event.reset()
+        })
+        .catch(error=>{
+            console.log(error.message)
+        })
+
+        // firebase registration
     }
 
     return (
