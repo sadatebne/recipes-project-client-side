@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -10,14 +10,14 @@ import app from '../../firebase/firebase.config';
 const auth = getAuth(app);
 
 const Register = () => {
+    const [err, setErr] = useState('')
+    const [success, setSuccess] = useState('')
 
     const navigate=useNavigate()
 
-    const {signUp, logout, loading}=useContext(AuthContext)
+    const {signUp, logout}=useContext(AuthContext)
 
-    if(loading){
-        return <div className="spinner-border text-success position-fixed top-50 start-50 translate-middle" role="status"></div>
-    }
+    
 
     const formHandle=(event)=>{
         
@@ -33,13 +33,15 @@ const Register = () => {
 
         signUp(email, password)
         .then(result=>{
-            console.log(result.user)
+            //console.log(result.user)
             updateUser(result.user, name, photo)
+            setSuccess("successfully Register")
             form.reset()
             navigate('/login')
             logout()
         })
         .catch(error=>{
+            setErr(error.message)
             console.log(error.message)
         })
 
@@ -89,9 +91,9 @@ const Register = () => {
                     </Form.Group>
 
                     <Form.Text className="text-danger">
-                        
+                        {err}
                     </Form.Text>
-
+                      {success}
                     <Form.Text className="text-success">
                         
                     </Form.Text>
