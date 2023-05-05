@@ -13,7 +13,11 @@ const Register = () => {
 
     const navigate=useNavigate()
 
-    const {signUp, logout}=useContext(AuthContext)
+    const {signUp, logout, loading}=useContext(AuthContext)
+
+    if(loading){
+        return <div className="spinner-border text-success position-fixed top-50 start-50 translate-middle" role="status"></div>
+    }
 
     const formHandle=(event)=>{
         
