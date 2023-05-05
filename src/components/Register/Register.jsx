@@ -4,33 +4,52 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import { getAuth, updateProfile } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
+
+const auth = getAuth(app);
 
 const Register = () => {
 
     const {signUp}=useContext(AuthContext)
+    //console.log(userUpdate)
 
     const formHandle=(event)=>{
         
         event.preventDefault()
 
         const form=event.target
-        const user=form.name.value
+        const name=form.name.value
         const email= form.email.value
         const password= form.password.value
         const photo=form.photo.value
 
-        console.log(user, email, password)
+        console.log(name, email, password, photo)
 
         signUp(email, password)
         .then(result=>{
             console.log(result.user)
-            event.reset()
+            updateUser(result.user, name, photo)
+            form.reset()
         })
         .catch(error=>{
             console.log(error.message)
         })
 
         // firebase registration
+    }
+
+    const updateUser=(user, name, photo)=>{
+        updateProfile(user,{
+            displayName : name,
+            photoURL: photo,
+        })
+        .then(() => {
+            console.log('user name updated')
+        })
+        .catch(error => {
+            setError(error.message);
+        })
     }
 
     return (
