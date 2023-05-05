@@ -6,6 +6,7 @@ import Main from "../components/layouts/Main";
 import Chefs from "../components/Chefs/Chefs";
 import LoadRecipes from "../components/LoadRecipes/LoadRecipes";
 import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 
 
   const router = createBrowserRouter([
@@ -20,6 +21,10 @@ import Login from "../components/Login/Login";
         {
           path:"/login",
           element:<Login></Login>,          
+        },
+        {
+          path:"/register",
+          element:<Register></Register>,          
         },
         {
           path:"/chefs/:id",

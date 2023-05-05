@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 
 
+
+
 const Login = () => {
     const [err, setErr] = useState('')
     const [success, setSuccess] = useState('')
@@ -15,11 +17,13 @@ const Login = () => {
         const form = event.target
         const email = form.email.value
         const password = form.password.value
+
+        console.log(email, password)
     }
     return (
         <div>
             <Container className='w-50 mt-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded'>
-                <Form onSubmit={handleSign} className='mt-5 p-5'>
+                <Form onSubmit={handleSign} className='mt-5 p-3'>
                      <h3 className='text-center fs-2'>Login In</h3>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -46,8 +50,12 @@ const Login = () => {
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
-
                 </Form>
+                
+                <div className='text-center mb-2'>
+                <Button className='me-2' variant="outline-primary">  Login With Google</Button>
+                <Button variant="outline-success"> Login With GitHub</Button>
+                </div>
 
                 <Form.Text>
                     Don't Have a Account <Link className="text-danger" to="/register">Register</Link>
