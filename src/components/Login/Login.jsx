@@ -7,13 +7,11 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-toastify';
 
 
-
-
 const Login = () => {
     const [err, setErr] = useState('')
     const [success, setSuccess] = useState('')
 
-    const {logIn}=useContext(AuthContext)
+    const {logIn, googleLogin}=useContext(AuthContext)
 
     const handleSign = (event) => {
         event.preventDefault()
@@ -28,13 +26,28 @@ const Login = () => {
 
         logIn(email , password)
         .then(result=>{
-            setSuccess("Successfully Login")
+            console.log(result.user)
             toast("Successfully Login");
+            setErr('')
         })
         .catch(error=>{
             console.log(error)
             setErr(error.message)
         })
+    }
+
+    const handleGoogle=()=>{
+        googleLogin()
+        .then(result=>{
+            console.log(result.user)
+            toast("Successfully Login");
+            setErr('')
+        })
+        .catch(error=>{
+            console.log(error)
+            setErr(error.message)
+        })        
+
     }
     return (
         <div>
@@ -69,7 +82,7 @@ const Login = () => {
                 </Form>
                 
                 <div className='text-center mb-2'>
-                <Button className='me-2' variant="outline-primary">  Login With Google</Button>
+                <Button onClick={handleGoogle} className='me-2' variant="outline-primary">  Login With Google</Button>
                 <Button variant="outline-success"> Login With GitHub</Button>
                 </div>
 
