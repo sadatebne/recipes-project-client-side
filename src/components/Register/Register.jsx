@@ -12,7 +12,6 @@ const auth = getAuth(app);
 const Register = () => {
 
     const {signUp}=useContext(AuthContext)
-    //console.log(userUpdate)
 
     const formHandle=(event)=>{
         

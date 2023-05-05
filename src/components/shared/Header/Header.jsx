@@ -32,7 +32,7 @@ const Header = () => {
         <Container>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/" className='fs-2'>REC<FontAwesomeIcon icon={faPepperHot} bounce size="lg" style={{ color: "#f00000", }} />PE </Navbar.Brand>
+                    <Navbar.Brand href="/" className='fs-2'>REC<FontAwesomeIcon icon={faPepperHot} bounce size="lg" style={{ color: "#f00000", }} />PE$ </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
