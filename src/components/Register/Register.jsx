@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { getAuth, updateProfile } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
@@ -11,7 +11,9 @@ const auth = getAuth(app);
 
 const Register = () => {
 
-    const {signUp}=useContext(AuthContext)
+    const navigate=useNavigate()
+
+    const {signUp, logout}=useContext(AuthContext)
 
     const formHandle=(event)=>{
         
@@ -30,6 +32,8 @@ const Register = () => {
             console.log(result.user)
             updateUser(result.user, name, photo)
             form.reset()
+            navigate('/login')
+            logout()
         })
         .catch(error=>{
             console.log(error.message)
@@ -45,6 +49,7 @@ const Register = () => {
         })
         .then(() => {
             console.log('user name updated')
+            logout()
         })
         .catch(error => {
             setError(error.message);

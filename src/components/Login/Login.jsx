@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-toastify';
 
@@ -10,6 +10,15 @@ import { toast } from 'react-toastify';
 const Login = () => {
     const [err, setErr] = useState('')
     const [success, setSuccess] = useState('')
+
+    //navigate hook
+    const navigate=useNavigate()
+
+    // location Hook
+    
+    const location=useLocation()
+    
+    const from=location.state?.from?.pathname || "/";
 
     const {logIn, googleLogin}=useContext(AuthContext)
 
@@ -29,6 +38,8 @@ const Login = () => {
             console.log(result.user)
             toast("Successfully Login");
             setErr('')
+            navigate(from,{replace: true})
+
         })
         .catch(error=>{
             console.log(error)

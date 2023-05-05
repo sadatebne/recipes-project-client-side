@@ -7,6 +7,7 @@ import Chefs from "../components/Chefs/Chefs";
 import LoadRecipes from "../components/LoadRecipes/LoadRecipes";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 
   const router = createBrowserRouter([
@@ -28,7 +29,7 @@ import Register from "../components/Register/Register";
         },
         {
           path:"/chefs/:id",
-          element:<LoadRecipes></LoadRecipes>,
+          element:<PrivateRoute><LoadRecipes></LoadRecipes></PrivateRoute>,
           loader: ({params})=>(fetch(`http://localhost:3000/chefs/${params.id}`))
         }
       ]
