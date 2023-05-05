@@ -29,7 +29,7 @@ const LoadRecipes = () => {
                     v ? (
                     <div className='d-flex flex-column flex-lg-row justify-content-lg-around align-items-lg-center'>
                         <>
-                          <img src={v.chefPicture} />
+                          <img src={v.chefPicture} style={{ height: "400px", width: "400px" }}/>
                         </>
                       <div>
                           <h2 className='p-2'>{v.chefName}</h2>
@@ -44,7 +44,7 @@ const LoadRecipes = () => {
                     )
                 }
             </div>
-            <div className='mt-5'>
+            <div className='mt-5 '>
                 <h1 className='text-center'>Chef Delicious Recipe</h1>
              {
                 recipes.map(recipe=><ShowRecipes key={recipe.recipeId} recipe={recipe}></ShowRecipes>)

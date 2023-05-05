@@ -24,7 +24,7 @@ const Footer = () => {
                     <p>+880-000-1234567</p>
                 </Col>
             </Row>
-            <p className='fw-bolder fst-italic'>Thanks for visiting our recipe website! Discover delicious recipes and cooking tips to help you create amazing meals for your family and friends. Don't forget to sign up for our newsletter to stay up-to-date on our latest recipes and cooking hacks.</p>
+            <p className='fw-bolder fst-italic mt-5'>Thanks for visiting our recipe website! Discover delicious recipes and cooking tips to help you create amazing meals for your family and friends. Don't forget to sign up for our newsletter to stay up-to-date on our latest recipes and cooking hacks.</p>
             <div className='d-flex justify-content-center gap-3 fs-3 text-primary'>
                 <p><FaFacebook></FaFacebook></p>
                 <p><FaInstagram></FaInstagram></p>
