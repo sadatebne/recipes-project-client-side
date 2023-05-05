@@ -13,31 +13,30 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3 className='text-white fs-1'>Welcome To Recipe Burn Website</h3>
+                        <p className='text-white fs-3'>If You are Glutton, We are here to serve delicious Recipe.. </p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://media.istockphoto.com/id/1318864932/photo/overhead-view-autumn-dinner-table-with-baked-pumpkin-with-chickpeas-curry-tortilla-with.jpg?s=612x612&w=0&k=20&c=0asHjoWaokDNtJNtxHNQs3VChTtHcC6pO_uo4H2oHEI="
+                        src="https://images.everydayhealth.com/images/healthy-dishes-to-order-at-indian-restaurants-1440x810.jpg"
                         alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3 className=' fs-1'>Best Indian Chefs</h3>
+                        <p className='fs-3'>Here You can found Best Indian Chefs Recipes</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://media.istockphoto.com/id/922783734/photo/assorted-indian-recipes-food-various.jpg?s=612x612&w=0&k=20&c=p8DepvymWfC5j7c6En2UsQ6sUM794SQMwceeBW3yQ9M="
-                        alt="Third slide"
+                        src="https://www.eatthis.com/wp-content/uploads/sites/4/2020/01/chicken-tikka-masala.jpg?quality=82&strip=1"
                     />
                     <Carousel.Caption>
-                        <h5>Third slide label</h5>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        <h3 className='text-white fs-1'>Chicken Tikka Masala Most popular</h3>
+                        <p className='text-white fs-3'>
+                            Login Quick and Get Best Food Recipes
                         </p>
                     </Carousel.Caption>
                 </Carousel.Item>

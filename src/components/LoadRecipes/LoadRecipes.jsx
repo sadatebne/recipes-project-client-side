@@ -15,7 +15,7 @@ const LoadRecipes = () => {
     const [viewChefs, setViewChef] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/chefs')
+        fetch('https://a10-recipe-web-server-side-sadatebne.vercel.app/chefs')
         .then(res => res.json())
         .then(data => setViewChef(data))
         .catch(error => console.log(error))

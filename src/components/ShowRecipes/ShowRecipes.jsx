@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Card, CardGroup, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faHeart , faDownload } from '@fortawesome/free-solid-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
+import Pdf from "react-to-pdf";
 
+const ref = React.createRef();
 
 const ShowRecipes = ({ recipe }) => {
 
@@ -17,7 +19,7 @@ const ShowRecipes = ({ recipe }) => {
     const { recipeId, recipeName, ingredients, instructions, imageURL, rating } = recipe
     //console.log(recipe)
     return (
-        <Container >
+        <Container ref={ref}>
             {/* <div className='d-flex flex-column flex-md-row gap-4 mt-4'>
                <div>
                     <img src={imageURL} alt="" style={{ height: '300px', width: '350px' }} />
@@ -34,7 +36,7 @@ const ShowRecipes = ({ recipe }) => {
             </div> */}
             <CardGroup>
                 <Card className='mt-5'>
-                    <Card.Img variant="top" src={imageURL} />
+                    <Card.Img variant="top" src={imageURL}/>
                     <Card.Body>
                         <Card.Title>{recipeName}</Card.Title>
                         <h6>Ingredients</h6>
@@ -46,16 +48,21 @@ const ShowRecipes = ({ recipe }) => {
                             {instructions}
                         </Card.Text>
                         <Card.Text>
-                           Rating: {rating}
+                            Rating: {rating}
                         </Card.Text>
                         <Card.Text>
-                        <Button onClick={handleFav} variant="outline-success" disabled={fav} >Favorite <FontAwesomeIcon icon={faHeart} beat size="lg" style={{color: "#ff0000",}} />
-                    </Button>
+                            <Button onClick={handleFav} variant="outline-success" disabled={fav} >Favorite <FontAwesomeIcon icon={faHeart} beat size="lg" style={{ color: "#ff0000", }} />
+                            </Button>
                         </Card.Text>
                     </Card.Body>
-                    
+
+
                     <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
+                        <Pdf targetRef={ref} filename="recipe.pdf">
+                            {({ toPdf }) => <Button onClick={toPdf}variant="outline-danger" >Download <FontAwesomeIcon icon={faDownload} bounce size="lg" style={{color: "#048113",}} />
+                            </Button>}
+                        </Pdf>
+
                     </Card.Footer>
                 </Card>
             </CardGroup>

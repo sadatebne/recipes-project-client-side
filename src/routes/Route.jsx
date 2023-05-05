@@ -37,7 +37,7 @@ import Blogs from "../components/Blogs/Blogs";
         {
           path:"/chefs/:id",
           element:<PrivateRoute><LoadRecipes></LoadRecipes></PrivateRoute>,
-          loader: ({params})=>(fetch(`http://localhost:3000/chefs/${params.id}`))
+          loader: ({params})=>(fetch(`https://a10-recipe-web-server-side-sadatebne.vercel.app/chefs/${params.id}`))
         }
       ]
     }
