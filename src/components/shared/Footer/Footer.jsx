@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPepperHot } from '@fortawesome/free-solid-svg-icons'
+import { faPepperHot, faBowlRice } from '@fortawesome/free-solid-svg-icons'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
         <Container style={{backgroundImage:`url('https://img.freepik.com/free-vector/modern-flowing-blue-wave-banner-background_1035-19862.jpg?w=826&t=st=1683279689~exp=1683280289~hmac=1191200f4e0d9dcd5a4836fefae9405fb39c2c08872e2782b838ffa53719188c')`, backgroundSize:'cover'}} className='mt-5 text-center p-3 fw-semibold'>
             <Row>
                 <Col lg={4}>
-                    <h1 className='text-success'>REC<FontAwesomeIcon icon={faPepperHot} bounce size="lg" style={{ color: "#f00000", }} />PE$</h1>
+                    <h1 className='text-success'>REC<FontAwesomeIcon icon={faPepperHot} bounce size="lg" style={{ color: "#f00000", }} />PE$ <FontAwesomeIcon icon={faBowlRice} shake style={{color: "#cdb518",}} /> </h1>
                     <small>A recipe website is a platform that offers users access to a diverse collection of recipes and cooking tips to help them create delicious meals.</small>
                 </Col>
                 <Col lg={4}>

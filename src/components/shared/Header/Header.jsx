@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPepperHot } from '@fortawesome/free-solid-svg-icons'
+import { faPepperHot, faBowlRice } from '@fortawesome/free-solid-svg-icons'
 import Banner from '../../Banner/Banner';
 import { Button, Image } from 'react-bootstrap';
 import { AuthContext } from '../../../providers/AuthProvider';
@@ -32,7 +32,9 @@ const Header = () => {
         <Container>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/" className='fs-2'>REC<FontAwesomeIcon icon={faPepperHot} bounce size="lg" style={{ color: "#f00000", }} />PE$ </Navbar.Brand>
+                    <Navbar.Brand href="/" className='fs-2'>REC<FontAwesomeIcon icon={faPepperHot} bounce size="lg" style={{ color: "#f00000", }} />PE$ <FontAwesomeIcon icon={faBowlRice} shake style={{color: "#cdb518",}} />
+                    
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">

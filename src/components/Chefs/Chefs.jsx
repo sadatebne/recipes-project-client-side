@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import ViewChefs from '../ViewChefs/ViewChefs';
 import Banner from '../Banner/Banner';
+import RLMarquee from '../RLMarquee/RLMarquee';
 
 const Chefs = () => {
     
@@ -17,7 +18,8 @@ const Chefs = () => {
     return (
         <Container>
             <Banner></Banner>
-            <h2>Our Chefs</h2>
+            <RLMarquee></RLMarquee>
+            <h2 className='text-center fw-bold my-5'>OUR CHEFS</h2>
             <Row xs={1} md={2} lg={3} className="g-4">
                  {
                     viewChefs.map(viewChef=><ViewChefs key={viewChef.chefId} viewChef={viewChef}></ViewChefs>)
